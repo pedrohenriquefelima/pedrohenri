@@ -1,0 +1,15 @@
+<template>
+    <template for:each={list} for:item="accountItem">
+        <lightning-card key={accountItem.Id}>
+            <c-child  account={accountItem} onsendtoparent={sendtosibling}></c-child>
+        </lightning-card>
+    </template>
+<br>
+<br>
+    <template if:true={elementFromChild}>
+        <lightning-card>
+            <h1 style="font-weight:1000">Component 2 (Child)</h1>
+            {elementFromChild.Name} had the following website: {elementFromChild.Website}
+        </lightning-card>
+    </template>
+</template>
